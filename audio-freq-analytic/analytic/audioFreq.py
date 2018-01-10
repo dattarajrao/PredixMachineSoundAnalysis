@@ -2,10 +2,18 @@ import json
 from scipy.io import wavfile
 import numpy as np
 
+'''
+Python Analytic to be deployed to Predix analytics Catalog
+
+Analyzes Audio file to extract key frequencies related to machine vibration.
+Extracts the frequencies to be shown as the Predix app
+'''
+
 class audioFreq:
     def __init__(self):
         print "Create audioFreq"
 
+	# the function that actrually analyzes the file
 	def analyze(input_filename):
 		# define return dictionary
 		retdata = {}
@@ -70,7 +78,8 @@ class audioFreq:
 
 		return retdata
 	
-    def add(self, data):
+	# the main method of the analytic in Predix
+    def run_analytic(self, data):
         # read the string file content parameter
 		data_json = json.loads(data)
         audio_str = data_json.get("audio_file_str")
