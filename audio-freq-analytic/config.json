@@ -1,0 +1,9 @@
+{
+  "entry-method": "analytic.audiofrequency.add",
+  "non-conda-libs": [
+  ],
+  "conda-libs": [
+    "numpy",
+    "scipy"
+  ]
+}
